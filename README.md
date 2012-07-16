@@ -35,6 +35,7 @@ Deploy
 ------
 
     % heroku create --stack cedar
+    % heroku config:add TZ=Asia/Tokyo
 
 enable addon MongoLab or MongoHQ
 

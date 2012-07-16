@@ -6,7 +6,7 @@ process.app.get('/', function(req, res){
   Memo.latests(40).exec(function(err, docs){
     if(err) res.send(error, 500)
     else{
-      res.render('index', { title: 'Express', memos: docs});
+      res.render('index', { title: 'Memo2', memos: docs});
     }
   });
 });

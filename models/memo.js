@@ -12,5 +12,5 @@ var MemoSchema = new Schema({
 var Memo = mongoose.model('Memo', MemoSchema);
 
 Memo.latests = function(num){
-  return Memo.find().sort('created_at', -1).limit(num);
+  return this.find().sort('created_at', -1).limit(num);
 };

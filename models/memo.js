@@ -14,3 +14,7 @@ var Memo = mongoose.model('Memo', MemoSchema);
 Memo.latests = function(num){
   return this.find().sort('created_at', -1).limit(num);
 };
+
+Memo.find_by_id = function(id){
+  return this.find({'_id':id});
+};

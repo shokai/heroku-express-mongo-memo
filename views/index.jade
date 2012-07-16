@@ -1,7 +1,10 @@
 h1= title
-form(method='POST', action='/')
-  input(type='text', size=70, name='memo')
-  input(type='submit')
+form(method="POST", action="/")
+  input(type="text", size=70, name="memo")
+  input(type="submit")
 ul
   - each memo in memos
-    li #{memo.body} - #{memo.created_at}
+    li
+      span= memo.body
+      span= "&nbsp;&nbsp;-&nbsp;"
+      a(href="/#{memo.id}")= memo.created_at

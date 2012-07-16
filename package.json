@@ -12,7 +12,7 @@
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
-    "node": "0.6.*"
+    "node": "0.6.x"
   },
   "author": "Sho Hashimoto <hashimoto@shokai.org> (http://shokai.org)",
   "description": "MongoLab/MongoHQ Test on Heroku",

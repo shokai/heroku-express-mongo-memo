@@ -5,7 +5,7 @@ mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb
 var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
 
 var MemoSchema = new Schema({
-  body : {type :String},
+  body : {type: String},
   created_at : {type: Date, default: Date.now}
 });
 

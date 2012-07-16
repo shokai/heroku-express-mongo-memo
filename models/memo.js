@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/memo')
+mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/memo')
 
 var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
 

@@ -35,7 +35,14 @@ Deploy
 ------
 
     % heroku create --stack cedar
+
+enable addon MongoLab or MongoHQ
+
     % heroku addons:add mongolab:starter
+    % heroku addons:add mongohq:free
+
+deploy
+
     % git push heroku master
     % heroku open
 

@@ -9,7 +9,7 @@ var MemoSchema = new Schema({
   created_at : {type: Date, default: Date.now}
 });
 
-var Memo = mongoose.model('Memo', MemoSchema);
+Memo = mongoose.model('Memo', MemoSchema);
 
 Memo.latests = function(num){
   return this.find().sort('created_at', -1).limit(num);

@@ -1,7 +1,6 @@
 
 var async = require('async');
 mongoose = require('mongoose');
-var Memo = mongoose.model('Memo');
 
 process.app.get('/', function(req, res){
   async.parallel(

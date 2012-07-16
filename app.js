@@ -1,5 +1,5 @@
 
-var Memo = require('./models/memo');
+require('./models');
 var express = require('express');
 var app = process.app = module.exports = express.createServer();
 

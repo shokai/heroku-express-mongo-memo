@@ -3,3 +3,6 @@ p Welcome to #{title}
 form(method='POST', action='/')
   input(type='text', size=70, name='memo')
   input(type='submit')
+ul
+  - each memo in memos
+    li #{memo.body} - #{memo.created_at}

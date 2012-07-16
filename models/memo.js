@@ -9,10 +9,8 @@ var MemoSchema = new Schema({
   created_at : {type: Date, default: Date.now}
 });
 
-/*
-MemoSchema.path('body').set(function(v){
-  return capitalize(v);
-});
-*/
-
 var Memo = mongoose.model('Memo', MemoSchema);
+
+Memo.latests = function(num){
+  return Memo.find().sort('created_at', -1).limit(num);
+};

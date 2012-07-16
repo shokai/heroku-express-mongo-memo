@@ -1,10 +1,14 @@
 
 mongoose = require('mongoose');
 var Memo = mongoose.model('Memo');
-console.log(Memo.length);
 
 process.app.get('/', function(req, res){
-  res.render('index', { title: 'Express' });
+  Memo.latests(40).exec(function(err, docs){
+    if(err) res.send(error, 500)
+    else{
+      res.render('index', { title: 'Express', memos: docs});
+    }
+  });
 });
 
 process.app.post('/', function(req, res){

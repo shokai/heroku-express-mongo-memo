@@ -1,14 +1,35 @@
 
+var async = require('async');
 mongoose = require('mongoose');
 var Memo = mongoose.model('Memo');
 
 process.app.get('/', function(req, res){
-  Memo.latests(40).exec(function(err, docs){
-    if(err) res.send('memo get error', 500)
-    else{
-      res.render('index', { title: 'Memo2', memos: docs});
+  async.parallel(
+    [
+      function(exit){
+        Memo.latests(40).exec(function(err, docs){
+          if(err) res.send('memo get error', 500);
+          else{
+            exit(null, docs);
+          }
+        });
+      }, function(exit){
+        Memo.find({}).exec(function(err, docs){
+          if(err) res.send('memo count error', 500);
+          else{
+            exit(null, docs.length);
+          }
+        })
+      }
+    ], function(err, results){
+      if(err) res.send('error', 500);
+      else{
+        var memos = results[0];
+        var count = results[1];
+        res.render('index', {title: 'Memo2', memos: memos, count: count});
+      }
     }
-  });
+  );
 });
 
 process.app.post('/', function(req, res){

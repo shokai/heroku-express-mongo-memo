@@ -1,4 +1,4 @@
-require(__dirname+'/../models/memo');
+require(__dirname+'/../models');
 
 var _ = require('underscore');
 var mongoose = require('mongoose');

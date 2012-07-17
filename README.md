@@ -48,6 +48,14 @@ deploy
     % heroku open
 
 
+Console
+-------
+
+    % node
+    > require('./console');
+    > Memo.find().exec(_dump);
+
+
 LICENSE
 =======
 (The MIT License)

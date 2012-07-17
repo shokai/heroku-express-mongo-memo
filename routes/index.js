@@ -34,8 +34,7 @@ process.app.get('/', function(req, res){
 
 process.app.post('/', function(req, res){
   var body = req.body.memo;
-  var m = new Memo();
-  m.body = body;
+  var m = new Memo({body: body});
   m.save();
   res.redirect('/');
 });

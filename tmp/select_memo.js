@@ -12,4 +12,5 @@ Memo.latests(3).exec(function(err, docs){
       console.log(d.toString());
     });
   }
+  mongoose.disconnect();
 });

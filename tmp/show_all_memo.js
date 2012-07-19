@@ -13,4 +13,5 @@ Memo.find({}, function(err, docs){
       console.log(i.body + '  - ' + i.created_at);
     });
   }
+  mongoose.disconnect();
 });
